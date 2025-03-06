@@ -35,13 +35,62 @@ docker compose up -d
 
 then you can send emails using localhost:1025 without credentials
 
+You can add MOCK_SERVICE if you want to mock/simulate the sms backend. Do not use it in production
+
 ## run using helm
 
+Create a SNS to send sms obtain the topic_arn
+
+create an AWS user in IAM that has the following permissions: `sns:Publish` to the specific topic_arn
+
+create a secret in the cluster with those credentials:
 ```bash
-helm install smtp-to-sns ./smtp-to-sns-chart
+kubectl create secret generic aws-credentials \
+    --from-literal=AWS_ACCESS_KEY_ID='xxxx' \
+    --from-literal=AWS_SECRET_ACCESS_KEY='yyyy' \
+
+
+create a values.yaml file with the `topic` and the `region`:
+```yaml
+app:
+  region: us-west-1
+  # add topic arn value
+  topic: arn:aws:sns:us-west-1:xxxxx:MyTopic
+  # mock service (do not use in production)
+  #mock: "true"  
+  secret: 
+    name: aws-credentials
+  ```
+
+```bash
+helm install smtp-to-sns ./smtp-to-sns-chart -f values.yaml
 ```
 
 then you can send emails using this configuration:
 ```
 smtp2sns:1025
+```
+
+
+# test
+
+There is a test script to localhost:1025 to test the smtp server. Netcat and bash is needed (nc)
+```bash
+./test.sh
+```
+
+execution example:
+```bash
+$ ./test.sh
+220 eccc82e00c5f Python SMTP 1.4.6
+250-eccc82e00c5f
+250-SIZE 33554432
+250-8BITMIME
+250-SMTPUTF8
+250 HELP
+250 OK
+250 OK
+354 End data with <CR><LF>.<CR><LF>
+250 OK: queued as mock:1234
+221 Bye
 ```

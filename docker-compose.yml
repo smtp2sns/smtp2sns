@@ -4,7 +4,7 @@ services:
     #image: ghcr.io/smtp2sns/smtp2sns
     restart: always
     ports:
-      - 1025:25    
+      - 1025:1025    
     env_file:
       - .env
     

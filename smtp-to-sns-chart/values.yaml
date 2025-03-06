@@ -11,12 +11,14 @@ app:
   topic: arn:aws:sns:us-west-1:xxxxx:MyTopic
   # extra env vars
   environment: {}
-# Comment out to use aws-credentials with sns:Publish to the sns queue
-#  secret: 
-#    name: aws-credentials
-# kubectl create secret generic aws-credentials \
-#  --from-literal=AWS_ACCESS_KEY_ID='xxxx' \
-#  --from-literal=AWS_SECRET_ACCESS_KEY='yyyy' \
+  # mock service (do not use in production)
+  #mock: "true"
+  # Comment out to use aws-credentials with sns:Publish to the sns queue
+  #secret: 
+  #  name: aws-credentials
+  # kubectl create secret generic aws-credentials \
+  #  --from-literal=AWS_ACCESS_KEY_ID='xxxx' \
+  #  --from-literal=AWS_SECRET_ACCESS_KEY='yyyy' \
 
 # This sets the container image more information can be found here: https://kubernetes.io/docs/concepts/containers/images/
 image:

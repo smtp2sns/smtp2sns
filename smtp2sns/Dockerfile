@@ -5,9 +5,8 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # Copy the script and install dependencies
-COPY smtp_to_sns.py .
 RUN pip install boto3 aiosmtpd
-
+COPY smtp_to_sns.py .
 # Expose SMTP port
 EXPOSE 1025
 
