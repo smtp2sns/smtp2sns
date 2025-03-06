@@ -1,6 +1,7 @@
 services:
   smtp2sns:
     build: smtp2sns
+    #image: ghcr.io/smtp2sns/smtp2sns
     restart: always
     ports:
       - 1025:25    
