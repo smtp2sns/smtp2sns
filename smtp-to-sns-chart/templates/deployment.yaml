@@ -51,8 +51,7 @@ spec:
           {{- with .Values.readinessProbe }}
           readinessProbe:
             {{- toYaml . | nindent 12 }}
-          {{- end }}
-          {{- with .Values.resources }}
+          {{- end }}          
 	        env:
           {{- with .Values.app.secret }}
             - name: AWS_ACCESS_KEY_ID
@@ -71,8 +70,9 @@ spec:
             - name: TOPIC_ARN
 	            value: {{ .Values.app.topic }}
           {{- with .Values.app.environment }}
-            {{- toYaml . | nindent 4 }}
+            {{- toYaml . | nindent 12 }}
           {{- end }}
+          {{- with .Values.resources }}
           resources:
             {{- toYaml . | nindent 12 }}
           {{- end }}

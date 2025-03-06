@@ -1,7 +1,9 @@
 services:
   smtp2sns:
     build: smtp2sns
-    restart: always    
+    restart: always
+    ports:
+      - 1025:25    
     env_file:
       - .env
     

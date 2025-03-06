@@ -43,6 +43,6 @@ class SMTPHandler(smtpd.SMTPServer):
 
 if __name__ == "__main__":
     # Start SMTP server
-    smtp_server = SMTPHandler(('0.0.0.0', 25), None)
-    print("SMTP server started on port 25...")
+    smtp_server = SMTPHandler(('0.0.0.0', 1025), None)
+    print("SMTP server started on port 1025...")
     asyncore.loop()
