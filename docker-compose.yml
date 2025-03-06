@@ -1,0 +1,7 @@
+services:
+  smtp2sns:
+    build: smtp2sns
+    restart: always    
+    env_file:
+      - .env
+    

@@ -6,7 +6,8 @@ from email.parser import BytesParser
 from email.policy import default
 import os
 
-AWS_REGION=os.environ.get("AWS_REGION","us-east-1")
+AWS_REGION = os.environ.get("AWS_REGION","us-east-1")
+TOPIC_ARN = os.environ.get("TOPIC_ARN")
 
 # AWS SNS client
 sns_client = boto3.client('sns', region_name=AWS_REGION)  # Change region as needed
@@ -31,7 +32,8 @@ class SMTPHandler(smtpd.SMTPServer):
                 try:
                     response = sns_client.publish(
                         PhoneNumber=phone_number,
-                        Message=msg.get_body(preferencelist=('plain')).get_content()
+                        Message=msg.get_body(preferencelist=('plain')).get_content(),
+                        TopicArn=TOPIC_ARN
                     )
                     print(f"SMS sent to {phone_number}: Message ID: {response['MessageId']}")
                 except Exception as e:
