@@ -7,6 +7,8 @@ TOPIC_ARN=arn:
 AWS_REGION=us-west-1
 AWS_ACCESS_KEY_ID=xxxx
 AWS_SECRET_ACCESS_KEY=yyyy
+```
+
 ```bash
 docker compose up -d
 ```
