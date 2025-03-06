@@ -7,6 +7,7 @@ replicaCount: 1
 
 app:
   region: us-west-1
+  # add topic arn value
   topic: arn:aws:sns:us-west-1:xxxxx:MyTopic
   # extra env vars
   environment: {}
@@ -66,7 +67,7 @@ service:
   # This sets the service type more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
   type: ClusterIP
   # This sets the ports more information can be found here: https://kubernetes.io/docs/concepts/services-networking/service/#field-spec-ports
-  port: 25
+  port: 1025
 
 # This block is for setting up the ingress for more information can be found here: https://kubernetes.io/docs/concepts/services-networking/ingress/
 ingress:
@@ -100,12 +101,12 @@ resources: {}
 # This is to setup the liveness and readiness probes more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 livenessProbe:
   tcpSocket:
-    port: 25
+    port: 1025
   initialDelaySeconds: 15
   periodSeconds: 10
 readinessProbe:
   tcpSocket:
-    port: 25
+    port: 1025
   initialDelaySeconds: 15
   periodSeconds: 10
   
