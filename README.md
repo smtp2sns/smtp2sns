@@ -1,5 +1,18 @@
 # smtp2sns
 
+![docker compilation workflow](https://github.com/smtp2sns/smtp2sns/actions/workflows/docker-publish.yml/badge.svg)
+
+This project transforms smtp messages to sms using aws sns service.
+```
+from: xxx@xxx.xxx
+to: +1xxxxxx@sms.sms
+subject: sms
+body:
+SMS to be send.
+EOF
+```
+
+
 ## run using docker-compose
 ```bash
 vi .env
