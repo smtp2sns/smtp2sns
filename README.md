@@ -11,6 +11,13 @@ body:
 SMS to be send.
 EOF
 ```
+## run using docker
+```bash
+docker run -d --rm -p 1025:1025 -e TOPIC_ARN=arn:xxx -e AWS_REGION=us-west-1 -e AWS_ACCESS_KEY_ID=xxxx -e AWS_SECRET_ACCESS_KEY=yyyy ghcr.io/smtp2sns/smtp2sns
+```
+
+
+then you can send emails using localhost:1025 without credentials
 
 
 ## run using docker-compose
@@ -26,7 +33,7 @@ AWS_SECRET_ACCESS_KEY=yyyy
 docker compose up -d
 ```
 
-then you can send emails using localhost:25 without credentials
+then you can send emails using localhost:1025 without credentials
 
 ## run using helm
 
@@ -35,3 +42,6 @@ helm install smtp-to-sns ./smtp-to-sns-chart
 ```
 
 then you can send emails using this configuration:
+```
+smtp2sns:1025
+```
