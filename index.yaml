@@ -3,6 +3,16 @@ entries:
   smtp-to-sns-chart:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-03-06T19:29:45.32302143Z"
+    description: A Helm chart for Kubernetes
+    digest: d687a562efc09ed52787e700f74bd69aeef46c63b82e95dd9631d223a986561c
+    name: smtp-to-sns-chart
+    type: application
+    urls:
+    - https://github.com/smtp2sns/smtp2sns/releases/download/v0.1.9/smtp-to-sns-chart-0.1.9.tgz
+    version: 0.1.9
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-03-06T19:26:18.874639216Z"
     description: A Helm chart for Kubernetes
     digest: 7082294a679bd217ba2ae2c7efee9feb03652269b5784ab0a31c631e89785cc8
@@ -11,4 +21,4 @@ entries:
     urls:
     - https://github.com/smtp2sns/smtp2sns/releases/download/v0.1.8/smtp-to-sns-chart-0.1.8.tgz
     version: 0.1.8
-generated: "2025-03-06T19:26:18.874649235Z"
+generated: "2025-03-06T19:29:45.323029345Z"
