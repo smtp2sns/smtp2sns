@@ -63,7 +63,7 @@ app:
   ```
 
 ```bash
-helm install smtp-to-sns ./smtp-to-sns-chart -f values.yaml
+helm install smtp-to-sns ./charts/smtp2sns -f values.yaml
 ```
 
 then you can send emails using this configuration:
