@@ -49,7 +49,7 @@ kubectl create secret generic aws-credentials \
     --from-literal=AWS_ACCESS_KEY_ID='xxxx' \
     --from-literal=AWS_SECRET_ACCESS_KEY='yyyy' \
 
-
+```
 create a values.yaml file with the `topic` and the `region`:
 ```yaml
 app:
