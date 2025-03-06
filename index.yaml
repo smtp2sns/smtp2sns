@@ -24,6 +24,21 @@ entries:
   smtp2sns:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2025-03-06T21:38:14.532510969Z"
+    description: A Helm chart smtp2sns. This service converts smtp mail messages to
+      sms using AWS SNS service
+    digest: a3a2475095744a568379676fe01c55844bc0b061e893cf4f73b2da6ca859c4b7
+    home: https://smtp2sns.github.io/
+    icon: https://smtp2sns.github.io/logo.png
+    name: smtp2sns
+    sources:
+    - https://github.com/smtp2sns/smtp2sns
+    type: application
+    urls:
+    - https://github.com/smtp2sns/smtp2sns/releases/download/v0.1.14/smtp2sns-0.1.14.tgz
+    version: 0.1.14
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2025-03-06T21:12:09.522444441Z"
     description: A Helm chart smtp2sns. This service converts smtp mail messages to
       sms using AWS SNS service
@@ -63,4 +78,4 @@ entries:
     urls:
     - https://github.com/smtp2sns/smtp2sns/releases/download/v0.1.10/smtp2sns-0.1.10.tgz
     version: 0.1.10
-generated: "2025-03-06T21:12:09.522458167Z"
+generated: "2025-03-06T21:38:14.532528682Z"
