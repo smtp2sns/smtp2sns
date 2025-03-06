@@ -6,10 +6,10 @@ WORKDIR /app
 
 # Copy the script and install dependencies
 COPY smtp_to_sns.py .
-RUN pip install boto3
+RUN pip install boto3 aiosmtpd
 
 # Expose SMTP port
-EXPOSE 25
+EXPOSE 1025
 
 # Run the script
 CMD ["python3", "smtp_to_sns.py"]
