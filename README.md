@@ -1,8 +1,6 @@
 # smtp2sns
 
-![docker compilation workflow](https://github.com/smtp2sns/smtp2sns/actions/workflows/docker-publish.yml/badge.svg)
-
-[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/smtp2sns)](https://artifacthub.io/packages/search?repo=smtp2sns)
+![docker compilation workflow](https://github.com/smtp2sns/smtp2sns/actions/workflows/docker-publish.yml/badge.svg) [![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/smtp2sns)](https://artifacthub.io/packages/search?repo=smtp2sns)
 
 This project transforms smtp messages to sms using aws sns service.
 ```
