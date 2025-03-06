@@ -60,10 +60,14 @@ app:
   #mock: "true"  
   secret: 
     name: aws-credentials
-  ```
+```
 
 ```bash
-helm install smtp-to-sns ./charts/smtp2sns -f values.yaml
+helm repo add smtp2sns https://smtp2sns.github.io/smtp2sns
+
+helm install smtp2sns smtp2sns/smtp2sns -f values.yaml
+# or in local
+helm install smtp2sns ./charts/smtp2sns -f values.yaml
 ```
 
 then you can send emails using this configuration:
